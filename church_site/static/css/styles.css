@@ -50,6 +50,10 @@ body {
     max-width: none;
 }
 
+.home {
+    color: #e6a11a;
+}
+
 a {
     color: var(--text-color);
     text-decoration: none;
@@ -114,6 +118,44 @@ nav {
 .menuButton {
     display: none;
 }
+
+.donate-btn {
+    background-color: #e6a11a;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.ftr-info {
+    display: flex;
+    padding: 0 3rem;
+    background-color: #111111;  
+}
+
+footer a, h3, p {
+    color: #ffffff;
+}
+
+.rights {
+    text-align: center;
+}
+
+.ftr-left,
+.quick-links,
+.social
+.contact {
+    display: column;
+    flex-direction: column;
+    margin: 20px;
+}
+
+
+footer i {
+    color:#e6a11a;
+}
+
+
+
 
 @media (max-width: 768px) {
     .nav-links,

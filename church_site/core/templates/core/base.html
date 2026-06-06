@@ -18,12 +18,13 @@
             </div>
             <div class='nav-center'>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a class='home' href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#events">Events</a></li>
                     {% comment %} <li><a href="#resources">Resources</a></li> {% endcomment %}
-                    <li><a href="#contact">Connect</a></li>
+                    <li><a href="#connect">Connect</a></li>
                     <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                 </ul>
             </div>
             <div class='nav-right'>
@@ -51,12 +52,49 @@
         </nav>
     </header>
 
+    <footer>
+        <div class='ftr-info'>
+            <div class='ftr-left'>
+                <img class='logo' src="{% static 'images/nav_pic.png' %}" alt='IPG Church'>
+                <p>Encendidos por su presencia.</p>
+                <p>Transformados para impactar.</p>
+            </div>
+            <div class='quick-links'>
+                <ul class="ftr-links">
+                    <h3>QUICK LINKS</h3>
+                    <li><a class='ftr-home' href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    {% comment %} <li><a href="#resources">Resources</a></li> {% endcomment %}
+                    <li><a href="#connect">Connect</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class='social'>
+                <h3>FOLLOW US</h3>
+                <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a></li>
+                <li><a href="https://www.instagram.com/ipgprovocadores/"><i class="fab fa-instagram"></i>Instagram</a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i>Youtube</a></li>
+            </div>
+            <div class'contact'>
+                <h3>CONTACT</h3>
+                <li><p><i class="fa-solid fa-location-dot"></i>7480 E IRLO BRONSON<br>MEMORIAL HWY<br>SAINT CLOUD, FL 34771</p></li>
+                <li><p><i class="fa-solid fa-phone"></i>(321) 443-2708</p></li>
+                <li><p><i class="fa-regular fa-envelope"></i>email</p></li>
 
+            </div>
+        </div>
 
+        <p class='rights'>&copy; <span id="year"></span> IPG Church. All Rights Reserved.</p>
 
-    <footer class="footer">
-        <p>&copy; <span id="year"></span> IPG Church. All Rights Reserved.</p>
     </footer>
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         function showSidebar(){
