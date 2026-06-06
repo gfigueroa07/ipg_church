@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request, 'core/base.html')
+
+def donate(request):
+    return HttpResponse('donate coming soon...')
