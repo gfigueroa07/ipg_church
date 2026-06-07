@@ -36,12 +36,12 @@ body {
     position: relative;
 }
 
-.nav-logo {
+/* .nav-logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
     flex: 0 0 180px;
-}
+} */
 
 .logo {
     display: block;
@@ -67,7 +67,7 @@ ul, li {
 }
 
 header {
-    padding: 10px 20px;
+    padding: 10px 2px;
 }
 
 nav {
@@ -106,65 +106,257 @@ nav {
     justify-content: flex-end;
 }
 
-
-
 .social-icons {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-.sidebar,
-.menuButton {
+.sidebar {
     display: none;
 }
 
+.menuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 250px;
+    height: 100vh;
+    background: #111111;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.sidebar a:hover {
+    background: #222;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    z-index: 999;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    align-self: flex-end;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
 .donate-btn {
-    background-color: #e6a11a;
+    background-color: #c97b00;
     color: #ffffff;
     padding: 5px;
-    border-radius: 6px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ftr-info {
     display: flex;
-    padding: 0 3rem;
-    background-color: #111111;  
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    gap: 2rem;
 }
 
-footer a, h3, p {
+footer a, 
+footer h3, 
+footer p {
     color: #ffffff;
+    margin: 5px;  
 }
 
 .rights {
+    color: white;
     text-align: center;
+    margin: 1rem;
 }
 
 .ftr-left,
 .quick-links,
-.social
+.min-info,
+.social,
 .contact {
-    display: column;
+    display: flex;
     flex-direction: column;
-    margin: 20px;
+    align-items: flex-start;
+    margin: 0;
+    gap: 0.5rem;
 }
 
 
 footer i {
     color:#e6a11a;
+    margin: 0;
+}
+
+.ftr-info > div {
+    flex: 1;
+    min-width: 160px;
 }
 
 
 
+@media (min-width: 1401px) {
+
+
+}
+
+@media (max-width: 1400px) {
+
+
+}
+
+@media (max-width: 1200px) {
+
+
+}
+
+@media (max-width: 992px) {
+
+
+}
 
 @media (max-width: 768px) {
-    .nav-links,
-    .social-icons,
-    .donate-btn {
+
+    .nav-links {
         display: none;
     }
 
     .menuButton {
         display: block;
     }
+
+    .nav-right {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    nav {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .ftr-info {
+        flex-wrap: wrap;
+    }
 }
+
+@media (max-width: 576px) {
+    header {
+        padding: 5px 2px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px 2px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .nav-right {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .donate-btn, i {
+        display: flex;
+        align-items: center;
+        padding: 5px 3px;
+        margin: 3px;
+    }
+
+    .sidebar {
+        position: absolute;
+    }
+
+    footer h3, 
+    footer p, 
+    footer a {
+        font-size: small;
+    }
+
+    footer, .ftr-info {
+        margin: 1px auto;
+        align-items: center;
+    }
+    
+    .ftr-info p {
+        padding: 5px 0;
+    }
+
+    .ftr-left,
+    .quick-links,
+    .min-info,
+    .social,
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .social li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    }
+
+    footer li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
