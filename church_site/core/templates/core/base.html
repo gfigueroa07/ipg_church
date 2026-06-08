@@ -50,19 +50,7 @@
                     <a href="#events">Events</a>
                     <a href="#connect">Connect</a>
                     <a href="#contact">Contact Us</a>
-                    <a href="{% url 'donate' %}">Donate</a>
-                </div>
-                <div class="overlay" onclick="closeSidebar()"></div>
-                <div class="sidebar">
-                    <button onclick="closeSidebar()">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Events</a>
-                    <a href="#">Connect</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Donate</a>
+                    <a href="#gallery">Gallery</a>
                 </div>
             </div>
         </nav>
@@ -74,8 +62,8 @@
                 <a href="{% url 'home' %}">
                     <img class='logo' src="{% static 'images/footer_logo.png' %}" alt='IPG Church'>
                 </a>
-                    <p>Encendidos por su presencia.</p>
-                <p>Transformados para impactar.</p>
+                    <p>Encendidos por su presencia.
+                    <br>Transformados para impactar.</p>
             </div>
             <div class='quick-links'>
                 <ul class="ftr-links">
@@ -104,15 +92,22 @@
                 <li><a href="https://www.instagram.com/ipgprovocadores/"><i class="fab fa-instagram"></i>Instagram</a></li>
                 <li><a href="https://www.youtube.com/@ipgchurch?si=7gsfHBuSs9cuPmx1/"><i class="fab fa-youtube"></i>Youtube</a></li>
             </div>
+            
             <div class='contact'>
                 <h3>CONTACT</h3>
-                <li><p><i class="fa-solid fa-location-dot"></i>7480 E IRLO BRONSON<br>MEMORIAL HWY<br>SAINT CLOUD, FL 34771</p></li>
-                <li><p><i class="fa-solid fa-phone"></i>(321) 443-2708</p></li>
-                <li><p><i class="fa-regular fa-envelope"></i>provocadoresdegloria88@gmail.com</p></li>
+                <li><p><a href='https://www.google.com/maps/place/IPG+Church/@28.1807188,-81.1388914,17z/data=!4m15!1m8!3m7!1s0x88dded6bf8337e9b:0x1bb461cbab6532f8!2s7480+E+Irlo+Bronson+Memorial+Hwy,+St+Cloud,+FL+34771!3b1!8m2!3d28.1807141!4d-81.1363165!16s%2Fg%2F11gm9x806x!3m5!1s0x88dded001bd7258d:0xcffa7a132840e49d!8m2!3d28.1807141!4d-81.1363165!16s%2Fg%2F11npn25bhq?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D' target='_blank'>
+                    <i class="fa-solid fa-location-dot"></i>
+                    7480 E IRLO BRONSON<br>MEMORIAL HWY
+                    <br>SAINT CLOUD, FL 34771</a></p></li>
+                <li><p><a href='tel:+13214432708'>
+                    <i class="fa-solid fa-phone"></i>
+                    (321) 443-2708</a></p></li>
+                <li><p><a class='email' href='mailto:provocadoresdegloria88@gmail.com'>
+                    <i class="fa-regular fa-envelope"></i>
+                    provocadoresdegloria88@gmail.com</a></p></li>
             </div>
-            
         </div>
-        <p class='rights'>&copy; <span id="year"></span>IPG Church. All Rights Reserved.</p>
+        <span class='line'>&copy; <span id="year"></span> IPG Church. All Rights Reserved.</span>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
