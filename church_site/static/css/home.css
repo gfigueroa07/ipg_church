@@ -1,14 +1,57 @@
-#home {
+.home-container {
     min-height: 50vh;
     gap: 10px; /* spacing between elements */
+}
+
+#home {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
     padding-inline: 40px;
 }
 
-.title-left h1  {
+.home-text {
+    position: absolute;
+    left: 40px;
+}
+#home h1  {
     font-size: 3rem;
+    margin: 0;
 }
 
-.title-left .title,
-.title-left .highlight {
+#home h2 {
+    margin-bottom: 0;
+}
+
+#home .title,
+#home .highlight {
     color: #e6a11a;
+}
+
+.home-logo {
+    grid-area: 1 / 1;
+}
+
+.main-logo {
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    z-index: 10;
+}
+
+.background-img {
+    position: absolute;
+    right: 0;
+}
+
+.background-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 30%;
+  /* Match the background color of your site (e.g., white) */
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }

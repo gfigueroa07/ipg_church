@@ -36,13 +36,6 @@ body {
     position: relative;
 }
 
-/* .nav-logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    flex: 0 0 180px;
-} */
-
 .logo {
     display: block;
     height: 70px;

@@ -5,12 +5,36 @@
 <link rel='stylesheet' href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block content %}
-<section id='home'>
-    <div class='title-left'>
-        <h2>WELCOME TO<BR></h2>
-        <h1>IPG <span class='title'>CHURCH</span>
-        <h3>ENCENDIDOS POR <span class='highlight'>SU PRESENCIA.</span><br>
-            TRANSFORMADOS PARA <span class='highlight'>IMPACTAR.</span></h3>
-    </div>
-</section>
+<div class='home-container'>
+    <section id='home'>
+        <div class="background-img">
+            <img class="worship"
+            src="{% static 'images/background_img.jpeg' %}"
+            alt="WORSHIP">
+        </div>
+        <div class="home-text">
+            <h2>WELCOME TO<BR></h2>
+            <h1>IPG <span class='title'>CHURCH</span>
+            <h3>ENCENDIDOS POR <span class='highlight'>SU PRESENCIA</span>.<br>
+                TRANSFORMADOS PARA <span class='highlight'>IMPACTAR</span>.</h3>
+        </div>
+        <div class='home-logo'>
+            <img class='main-logo' 
+            src="{% static 'images/main_pic.png' %}" 
+            alt="IPG CHURCH">
+        </div>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+</div>
 {% endblock %}
