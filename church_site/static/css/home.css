@@ -1,0 +1,14 @@
+#home {
+    min-height: 50vh;
+    gap: 10px; /* spacing between elements */
+    padding-inline: 40px;
+}
+
+.title-left h1  {
+    font-size: 3rem;
+}
+
+.title-left .title,
+.title-left .highlight {
+    color: #e6a11a;
+}

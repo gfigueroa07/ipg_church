@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<section id='home'>
+    <div class='title-left'>
+        <h2>WELCOME TO<BR></h2>
+        <h1>IPG <span class='title'>CHURCH</span>
+        <h3>ENCENDIDOS POR <span class='highlight'>SU PRESENCIA.</span><br>
+            TRANSFORMADOS PARA <span class='highlight'>IMPACTAR.</span></h3>
+    </div>
+</section>
+{% endblock %}

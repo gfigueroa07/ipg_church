@@ -40,7 +40,7 @@
                 <button class="menuButton" onclick="showSidebar()">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-
+                <div class="overlay" onclick="closeSidebar()"></div>
                 <div class="sidebar">
                     <button class="close-btn" onclick="closeSidebar()">
                         <i class="fa-solid fa-xmark"></i>
@@ -55,7 +55,11 @@
             </div>
         </nav>
     </header>
-
+    <main>
+        <div class="page-container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
     <footer>
         <div class='ftr-info'>
             <div class='ftr-left'>
@@ -91,8 +95,7 @@
                 <li><a href="https://www.facebook.com/people/IPG-Church/61590635636654/?mibextid=wwXIfr&rdid=ukyiIrxsJuHOu2hH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CrXUjpLft%2F%3Fmibextid%3DwwXIfr/"><i class="fab fa-facebook"></i>Facebook</a></li>
                 <li><a href="https://www.instagram.com/ipgprovocadores/"><i class="fab fa-instagram"></i>Instagram</a></li>
                 <li><a href="https://www.youtube.com/@ipgchurch?si=7gsfHBuSs9cuPmx1/"><i class="fab fa-youtube"></i>Youtube</a></li>
-            </div>
-            
+            </div>           
             <div class='contact'>
                 <h3>CONTACT</h3>
                 <li><p><a href='https://www.google.com/maps/place/IPG+Church/@28.1807188,-81.1388914,17z/data=!4m15!1m8!3m7!1s0x88dded6bf8337e9b:0x1bb461cbab6532f8!2s7480+E+Irlo+Bronson+Memorial+Hwy,+St+Cloud,+FL+34771!3b1!8m2!3d28.1807141!4d-81.1363165!16s%2Fg%2F11gm9x806x!3m5!1s0x88dded001bd7258d:0xcffa7a132840e49d!8m2!3d28.1807141!4d-81.1363165!16s%2Fg%2F11npn25bhq?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D' target='_blank'>
@@ -129,6 +132,11 @@
                 centeredSlides: false,
                 spaceBetween: 0,
                 slidesPerView: 'auto'
+            });
+            document.querySelectorAll('.sidebar a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeSidebar();
+                });
             });
         });
     </script>
