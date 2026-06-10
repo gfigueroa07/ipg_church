@@ -8,3 +8,9 @@ def home(request):
 
 def donate(request):
     return HttpResponse('donate coming soon...')
+
+def request_prayer(request):
+    return HttpResponse('prayer request coming soon...')
+
+def sermons(request):
+    return HttpResponse('sermons coming soon...')

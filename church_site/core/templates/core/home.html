@@ -17,24 +17,23 @@
             <h1>IPG <span class='title'>CHURCH</span>
             <h3>ENCENDIDOS POR <span class='highlight'>SU PRESENCIA</span>.<br>
                 TRANSFORMADOS PARA <span class='highlight'>IMPACTAR</span>.</h3>
+            <a href="{% url 'request_prayer' %}"
+                class="btn-primary">
+                <i class='fas fa-pray'></i>
+                    Request Prayer
+            </a>
+            <a href="{% url 'sermons' %}"
+                class="btn-secondary">
+                <i class='fa-solid fa-play'></i>
+                Watch Sermons
+            </a>        
         </div>
+        
         <div class='home-logo'>
             <img class='main-logo' 
             src="{% static 'images/main_pic.png' %}" 
             alt="IPG CHURCH">
         </div>
-
-
-
-
-
-
-
-
-
     </section>
-
-
-
 </div>
 {% endblock %}
