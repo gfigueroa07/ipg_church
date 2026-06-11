@@ -103,7 +103,7 @@ nav {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: .8rem;
     flex: 0 0 220px;
     justify-content: flex-end;
 }
@@ -177,7 +177,7 @@ nav {
     background-color: #e6a11a;
     color: #ffffff;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 .donate-btn:hover {
@@ -528,11 +528,10 @@ footer .line::after {
         justify-content: center;
     }
     
-    .donate-btn, i {
-        display: flex;
+    .donate-btn i {
         align-items: center;
-        padding: 5px 3px;
-        margin: 3px;
+        padding: 4px 2px;
+        margin: 2px;
     }
 
     .sidebar {

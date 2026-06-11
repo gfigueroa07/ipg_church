@@ -20,12 +20,12 @@
             <a href="{% url 'request_prayer' %}"
                 class="btn-primary">
                 <i class='fas fa-pray'></i>
-                    Request Prayer
+                    PRAYER REQUEST
             </a>
             <a href="{% url 'sermons' %}"
                 class="btn-secondary">
                 <i class='fa-solid fa-play'></i>
-                Watch Sermons
+                WATCH SERMONS
             </a>        
         </div>
         
@@ -34,6 +34,9 @@
             src="{% static 'images/main_pic.png' %}" 
             alt="IPG CHURCH">
         </div>
+    </section>
+    <section id='about'>
+        {% include 'core/about.html'%}
     </section>
 </div>
 {% endblock %}
