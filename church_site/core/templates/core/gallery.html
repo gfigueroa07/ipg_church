@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'css/gallery.css' %}">
+{% endblock %}
+{% block content %}
+<div class='gallery-container'>
+    <div class='gallery-header'>
+        <div class="gallery-bckgnd-img">
+            <img class="gallery-img"
+            src="{% static 'images/about_img.jpeg' %}"
+            alt="WORSHIP">
+        </div>
+        <div class='gallery-page-content'>
+            <h1>NUESTRA <span class='highlight'>
+                GALERÍA</span>
+            </h1>
+            <p>Moments that celebrate faith,<br>
+                worship, and community.
+            </p>
+    </div>
+    <div class='gallery-item'>
+    
+
+    </div>
+</div>
+{% endblock %}

@@ -4,6 +4,7 @@
 {% block extra_css %}
 <link rel='stylesheet' href="{% static 'css/home.css' %}">
 <link rel='stylesheet' href="{% static 'css/about.css' %}">
+<link rel='stylesheet' href="{% static 'css/gallery.css' %}">
 {% endblock %}
 {% block content %}
 <div class='home-container'>
@@ -87,7 +88,6 @@
         </div>
         <div class='about-card'>
             <div class='about-info'>
-                
                     <i class="fa-regular fa-square-caret-right"></i>
                     <div class='msg-text'>
                         <h6>MESSAGES</h6>
@@ -98,7 +98,6 @@
                             </a>
                         </h6>
                     </div>
-                
             </div>
             <div class='about-info'>
                 <i class="fa-solid fa-people-group"></i>
@@ -113,19 +112,78 @@
                 </div>
             </div>
         </div>
-</section>
-
-
-
-
-
-    <section id='events'>
     </section>
-    <section id='connect'>
+    <section id='gallery-preview'>
+        <div class='gallery-wrapper'>
+            <div class="gallery-content">
+                <h1 class="gallery-title">
+                    OUR <span class='highlight'>
+                        GALLERY</span></h1>
+                <p>Moments that celebrate faith,<br>
+                    worship, and community.</p>
+                <a class="gallery-btn" href="{% url 'gallery' %}">
+                    SEE FULL GALLERY ⟶
+                </a>
+            </div>
+            <div class='gallery-featured'>
+                    <img
+                    class="test"
+                    src="{% static 'images/about_img.jpeg' %}"
+                    alt="PRAISE">
+            </div>
+        </div>
+        <div class='gallery-grid'>
+            <div class='gallery-item'>
+                <img
+                class="test1"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test2"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+           <div class='gallery-item'>
+                <img
+                class="test3"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test4"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test5"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test6"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+        </div>
     </section>
     <section id='contact'>
-    </section>
-    <section id='gallery'>
+        <div class='contact-card'>
+            <h6> 
+                FULL NAME
+            </h6>
+            
+
+        </div>
     </section>
 </div>
 {% endblock %}

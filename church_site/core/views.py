@@ -15,6 +15,9 @@ def messages(request):
 def ministries(request):
     return HttpResponse('sermons coming soon...')
 
+def gallery(request):
+    return render(request, 'core/gallery.html')
+
 def donate(request):
     return HttpResponse('donate coming soon...')
 
