@@ -5,6 +5,7 @@
 <link rel='stylesheet' href="{% static 'css/home.css' %}">
 <link rel='stylesheet' href="{% static 'css/about.css' %}">
 <link rel='stylesheet' href="{% static 'css/gallery.css' %}">
+<link rel='stylesheet' href="{% static 'css/contact.css' %}">
 {% endblock %}
 {% block content %}
 <div class='home-container'>
@@ -90,11 +91,11 @@
             <div class='about-info'>
                     <i class="fa-regular fa-square-caret-right"></i>
                     <div class='msg-text'>
-                        <h6>MESSAGES</h6>
+                        <h6>SERMONS</h6>
                         <p>Find teachings that build up your faith.</p>
                         <h6>
-                            <a href="{% url 'messages' %}">
-                                VIEW MESSAGES
+                            <a href="{% url 'sermons' %}">
+                                VIEW SERMONS
                             </a>
                         </h6>
                     </div>
@@ -105,7 +106,7 @@
                     <h6>MINISTRIES</h6>
                     <p>Serve, connect, and grow alongside others.</p>
                     <h6>
-                        <a href="{% url 'messages' %}">
+                        <a href="{% url 'ministries' %}">
                             EXPLORE
                         </a>
                     </h6>
@@ -176,13 +177,37 @@
             </div>
         </div>
     </section>
-    <section id='contact'>
-        <div class='contact-card'>
-            <h6> 
-                FULL NAME
-            </h6>
-            
-
+    <section id="contact">
+        <div class="contact-card">
+            {% if messages %}
+            <div class='messages'>
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        <p class="{{ message.tags }}">{{ message }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+            <h2>Church Information</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        
+                        {% if field.errors %}
+                            <div class="error">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button class='contact-btn' type="submit">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    SUBMIT
+                </button>
+            </form>
         </div>
     </section>
 </div>

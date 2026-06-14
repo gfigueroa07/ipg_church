@@ -1,22 +1,47 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.conf import settings
+from django.core.mail import send_mail
+from core.models import ContactMessage
+from church_site.forms import ContactForm
+from django.contrib import messages
+
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'core/home.html')
+    form = ContactForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            contact = form.save()
+            send_mail(
+            subject=f"Contact - {form.cleaned_data['full_name']}",
+            message=form.cleaned_data["message"],
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.CONTACT_EMAIL],
+            )
+            messages.success(
+                request, 
+                "Thank you for contacting us. Your message has been received and we will respond within 24 hours."
+            )
+            
+            return redirect("/#contact")
+        else:
+            messages.error(
+                request,
+                'Please correct the errors below and try again.'
+            )
+    else:
+        form = ContactForm() 
+    return render(request, 'core/home.html', {
+        'form': form,
+    })
 
 def about(request):
     return render(request, 'core/about.html')
 
-def messages(request):
-    return HttpResponse('messages coming soon...')
-
 def ministries(request):
     return HttpResponse('sermons coming soon...')
-
-def gallery(request):
-    return render(request, 'core/gallery.html')
 
 def donate(request):
     return HttpResponse('donate coming soon...')
@@ -26,3 +51,6 @@ def request_prayer(request):
 
 def sermons(request):
     return HttpResponse('sermons coming soon...')
+
+def gallery(request):
+    return render(request, 'core/gallery.html')
