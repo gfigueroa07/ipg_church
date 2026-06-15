@@ -3,6 +3,9 @@
 
 {% block extra_css %}
 <link rel='stylesheet' href="{% static 'css/home.css' %}">
+<link rel='stylesheet' href="{% static 'css/about.css' %}">
+<link rel='stylesheet' href="{% static 'css/gallery.css' %}">
+<link rel='stylesheet' href="{% static 'css/contact.css' %}">
 {% endblock %}
 {% block content %}
 <div class='home-container'>
@@ -48,22 +51,164 @@
                     <i class='fa-solid fa-location-dot'></i>
                     <div class="info-text">
                         <h6>ADDRESS</h6>
-                        <p>7480 E Irlo Memorial Hwy,<br>
-                        Saint Cloud, FL 34771</p>
+                        <p><a href='https://www.google.com/maps/place/IPG+Church/@28.1807188,-81.1388914,17z/data=!4m15!1m8!3m7!1s0x88dded6bf8337e9b:0x1bb461cbab6532f8!2s7480+E+Irlo+Bronson+Memorial+Hwy,+St+Cloud,+FL+34771!3b1!8m2!3d28.1807141!4d-81.1363165!16s%2Fg%2F11gm9x806x!3m5!1s0x88dded001bd7258d:0xcffa7a132840e49d!8m2!3d28.1807141!4d-81.1363165!16s%2Fg%2F11npn25bhq?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D' target='_blank'>
+                            7480 E Irlo Memorial Hwy,<br>
+                        Saint Cloud, FL 34771</a></p>
                     </div>    
                 </div>
                 <div class="contact-us">
                     <i class='fa-solid fa-phone'></i>
                     <div class="info-text">
                         <h6>CONTACT US</h6>
-                        <p>(321) 443-2708<br>
-                        provocadoresdegloria88@gmail.com</p>
+                        <p><a href='tel:+13214432708'>
+                            (321) 443-2708</a><br>
+                        <a class='email' href='mailto:provocadoresdegloria88@gmail.com'>
+                            provocadoresdegloria88@gmail.com</a></p>
                     </div>
                 </div>
             </div>
     </section>
-    <section id='about'>
-        {% include 'core/about.html'%}
+    <section id="about">
+        <div class='about-wrapper'>
+            <div class="about-content">
+                <h1 class="about-title">ABOUT US</h1>
+                <p>We are a church passionate about the presence of God and<br> 
+                    committed to transforming lives through the love of Jesus.<br> 
+                    We believe in a relevant, united, and active church in the community. </p>
+
+                <a class="about-btn" href="{% url 'about' %}">
+                    LEARN MORE
+                </a>
+            </div>
+            <div class="about-img">
+                <img
+                    class="praise"
+                    src="{% static 'images/about_img.jpeg' %}"
+                    alt="PRAISE">
+            </div>
+        </div>
+        <div class='about-card'>
+            <div class='about-info'>
+                    <i class="fa-regular fa-square-caret-right"></i>
+                    <div class='msg-text'>
+                        <h6>SERMONS</h6>
+                        <p>Find teachings that build up your faith.</p>
+                        <h6>
+                            <a href="{% url 'sermons' %}">
+                                VIEW SERMONS
+                            </a>
+                        </h6>
+                    </div>
+            </div>
+            <div class='about-info'>
+                <i class="fa-solid fa-people-group"></i>
+                <div class='msg-text'>
+                    <h6>MINISTRIES</h6>
+                    <p>Serve, connect, and grow alongside others.</p>
+                    <h6>
+                        <a href="{% url 'ministries' %}">
+                            EXPLORE
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='gallery-preview'>
+        <div class='gallery-wrapper'>
+            <div class="gallery-content">
+                <h1 class="gallery-title">
+                    OUR <span class='highlight'>
+                        GALLERY</span></h1>
+                <p>Moments that celebrate faith,<br>
+                    worship, and community.</p>
+                <a class="gallery-btn" href="{% url 'gallery' %}">
+                    SEE FULL GALLERY ⟶
+                </a>
+            </div>
+            <div class='gallery-featured'>
+                    <img
+                    class="test"
+                    src="{% static 'images/about_img.jpeg' %}"
+                    alt="PRAISE">
+            </div>
+        </div>
+        <div class='gallery-grid'>
+            <div class='gallery-item'>
+                <img
+                class="test1"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test2"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+           <div class='gallery-item'>
+                <img
+                class="test3"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test4"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test5"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+
+            <div class='gallery-item'>
+                <img
+                class="test6"
+                src="{% static 'images/about_img.jpeg' %}"
+                alt="PRAISE">
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-card">
+            {% if messages %}
+            <div class='messages'>
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        <p class="{{ message.tags }}">{{ message }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+            <h2>Church Information</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        
+                        {% if field.errors %}
+                            <div class="error">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button class='contact-btn' type="submit">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    SUBMIT
+                </button>
+            </form>
+        </div>
     </section>
 </div>
 {% endblock %}

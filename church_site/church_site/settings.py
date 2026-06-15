@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     'core',
     'cloudinary',
     'cloudinary_storage',
+    'phonenumber_field'
 ]
 
 
@@ -56,8 +61,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-ROOT_URLCONF = 'church_site.urls'
 
 TEMPLATES = [
     {
@@ -137,3 +140,8 @@ os.makedirs(MEDIA_ROOT, exist_ok=True)
 STATICFILES_DIRS = [
     BASE_DIR /  "static",
 ]
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply.dev@gmail.com")
+CONTACT_EMAIL = os.getenv("CONTACT_EMAIL", "yourfallback@gmail.com")

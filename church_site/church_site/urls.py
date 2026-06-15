@@ -21,7 +21,10 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('ministries/', views.ministries, name='ministries'),
+    path('gallery/', views.gallery, name='gallery'),
     path('donate/', views.donate, name='donate'),
     path('request_prayer/', views.request_prayer, name='request_prayer'),
-    path('sermons/', views.sermons, name='sermons'),
+    path('sermons/', views.sermons, name='sermons'),   
 ]
