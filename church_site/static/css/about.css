@@ -1,3 +1,5 @@
+
+/* ABOUT HOMEPAGE */
 .about-title {
     position: relative;
     display: inline-block;
@@ -81,6 +83,86 @@
     font-size: 1rem;
     margin: 0;
 }
+
+/* ABOUT PAGE */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 50vh;
+    gap: 15px; /* spacing between elements */
+    background-color: #f2f2f2;
+    padding-inline: 20px;
+}
+
+.about-header {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    padding-inline: 20px;
+    background-color: #011d35;
+
+}
+
+.about-text {
+    position: absolute;
+    left: 40px;
+    z-index: 20;
+}
+
+.about-text h4 {
+    color: #e6a11a;
+}
+
+.about-text .title,
+.about-text p {
+    color: white;
+}
+
+.about-bckgnd-img {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+.about-bckgnd-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.about-bckgnd-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    /* background: linear-gradient(
+        90deg,
+        #011d35,
+        #022b4d,
+        #011d35
+    ) */
+    background:
+        linear-gradient(to right, #011d35 0%, transparent 30%),
+        linear-gradient(to top, #022b4d 0%, transparent 20%),
+        linear-gradient(to bottom, #011d35 0%, transparent 20%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 1401px) {

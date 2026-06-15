@@ -1,19 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
 
-<div class='about-container'>
-    <h1 class='about-title'> ABOUT US </h1>
-    <div class='about-content'>
-        <p>We are a church passionate about the presence of God and<br>
-            committed to transforming lives through the love of Jesus.<br>
-            We believe in a relevant, united, and active church in the community.
-        </p>
-        <a href=''
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'css/about.css' %}">
+{% endblock %}
+{% block content %}
+<div class="'about-container">
+    <div class="about-header">
+        <div class="about-bckgnd-img">
+            <img class="gallery-img"
+            src="{% static 'images/about_header.jpeg' %}"
+            alt="IPG CHURCH">
+        </div>
+        <div class="about-text">
+            <h1 class="title">
+                ABOUT<br>
+                IPG CHURCH
+            </h1>
+            <h4>
+                ENCENDIDOS POR SU PRESENCIA.<br>
+                TRANSFORMADOS PARA IMPACTAR.
+            </h4>
+            <p>
+                Somos una iglesia que existe para glorificar a Dios<br>
+                alcanzando personas, formando discipulos y<br>
+                impactando generaciones con el amor de Jesus.
+            </p>
+        </div>
     </div>
 
 
 
 
 
-
-
-
 </div>
+{% endblock %}
