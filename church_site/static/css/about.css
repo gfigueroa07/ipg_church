@@ -109,7 +109,7 @@
 
 .about-text {
     position: absolute;
-    left: 40px;
+    left: 20px;
     z-index: 20;
 }
 
@@ -154,20 +154,48 @@
 
 .about-body {
     display: flex;
-    flex-direction: column;
-    padding-inline: 20px;
-    position: relative;
-    min-height: 50vh;
+    align-items: flex-start;
+    gap: 5rem;
+    padding: 4rem 2rem;
 }
 
 .about-main {
-    position: absolute;
-
+    width: 400px;
+    margin-right: 80px;
 }
+
+.about-tags {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .history {
     color: #e6a11a;
 }
 
+.about-tags i {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    color: #e6a11a; 
+    font-size: 1.5rem;
+    border: 1px solid #011d35;
+}
+
+.reach,
+.form,
+.send,
+.impact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
 
 
