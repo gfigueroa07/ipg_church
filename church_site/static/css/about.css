@@ -152,6 +152,22 @@
         linear-gradient(to bottom, #011d35 0%, transparent 20%);
 }
 
+.about-body {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
+    position: relative;
+    min-height: 50vh;
+}
+
+.about-main {
+    position: absolute;
+
+}
+.history {
+    color: #e6a11a;
+}
+
 
 
 
