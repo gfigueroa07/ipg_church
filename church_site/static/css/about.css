@@ -90,9 +90,8 @@
     flex-direction: column;
     position: relative;
     min-height: 50vh;
-    gap: 15px; /* spacing between elements */
+    gap: 1rem; /* spacing between elements */
     background-color: #f2f2f2;
-    padding-inline: 20px;
 }
 
 .about-header {
@@ -102,7 +101,6 @@
     position: relative;
     overflow: hidden;
     min-height: 50vh;
-    padding-inline: 20px;
     background-color: #011d35;
 
 }
@@ -111,6 +109,7 @@
     position: absolute;
     left: 20px;
     z-index: 20;
+    padding-inline: 20px;
 }
 
 .about-text h4 {
@@ -156,12 +155,13 @@
     display: flex;
     align-items: flex-start;
     gap: 5rem;
-    padding: 4rem 2rem;
+    padding-inline: 20px;
 }
 
 .about-main {
-    width: 400px;
-    margin-right: 80px;
+    width: auto;
+    margin-right: 100px;
+    padding-inline: 20px;
 }
 
 .about-tags {
@@ -169,6 +169,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .history {
@@ -185,18 +186,45 @@
     background-color: white;
     color: #e6a11a; 
     font-size: 1.5rem;
-    border: 1px solid #011d35;
+    border: 1px solid #b6b6b6;
 }
 
-.reach,
-.form,
-.send,
-.impact {
+.tag-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
+.timeline {
+    width: 20px;
+    position: relative;
+    align-self: stretch;
+}
+
+.dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e6a11a;
+    transform: translate(-50%, -50%);
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: calc(100%);
+    width: 1px;
+    background: #b6b6b6;
+    transform: translateX(-50%);
+}
+
+.last .line {
+    display: none;
+}
 
 
 
@@ -218,11 +246,7 @@
 }
 
 @media (max-width: 1200px) {
-    
-}
-
-@media (max-width: 992px) {
-    .about-wrapper {
+        .about-wrapper {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -232,6 +256,18 @@
         justify-content: center;
     }
 
+    .about-body {
+        gap: 2rem;
+    }
+
+    .about-main {
+        margin-right: 0;
+    }
+
+}
+
+@media (max-width: 992px) {
+    
 }
 
 @media (max-width: 768px) {
