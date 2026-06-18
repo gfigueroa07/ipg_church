@@ -97,12 +97,6 @@ DATABASES = {
     )
 }
 
-# STORAGES = {
-#     "staticfiles": {
-#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-#     },
-# }
-
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
@@ -148,6 +142,8 @@ os.makedirs(MEDIA_ROOT, exist_ok=True)
 STATICFILES_DIRS = [
     BASE_DIR /  "static",
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
