@@ -8,34 +8,36 @@ from django.contrib import messages
 
 
 # Create your views here.
-
 def home(request):
-    form = ContactForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            contact = form.save()
-            send_mail(
-            subject=f"Contact - {form.cleaned_data['full_name']}",
-            message=form.cleaned_data["message"],
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.CONTACT_EMAIL],
-            )
-            messages.success(
-                request, 
-                "Thank you for contacting us. Your message has been received and we will respond within 24 hours."
-            )
+    form = ContactForm()
+    return render(request, "core/home.html", {"form": form})
+# def home(request):
+#     form = ContactForm(request.POST or None)
+#     if request.method == "POST":
+#         if form.is_valid():
+#             contact = form.save()
+#             send_mail(
+#             subject=f"Contact - {form.cleaned_data['full_name']}",
+#             message=form.cleaned_data["message"],
+#             from_email=settings.DEFAULT_FROM_EMAIL,
+#             recipient_list=[settings.CONTACT_EMAIL],
+#             )
+#             messages.success(
+#                 request, 
+#                 "Thank you for contacting us. Your message has been received and we will respond within 24 hours."
+#             )
             
-            return redirect("/#contact")
-        else:
-            messages.error(
-                request,
-                'Please correct the errors below and try again.'
-            )
-    else:
-        form = ContactForm() 
-    return render(request, 'core/home.html', {
-        'form': form,
-    })
+#             return redirect("/#contact")
+#         else:
+#             messages.error(
+#                 request,
+#                 'Please correct the errors below and try again.'
+#             )
+#     else:
+#         form = ContactForm() 
+#     return render(request, 'core/home.html', {
+#         'form': form,
+#     })
 
 def about(request):
     return render(request, 'core/about.html')
