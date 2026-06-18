@@ -1,0 +1,370 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 50vh;
+    gap: 15px; /* spacing between elements */
+    background-color: #f2f2f2;
+    padding-inline: 20px;
+}
+
+#home {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    padding-inline: 20px;
+}
+
+.home-text {
+    position: absolute;
+    left: 40px;
+    z-index: 20;
+}
+
+.btn-primary,
+.btn-secondary {
+    left: 40px;
+    padding: 5px;
+    margin-right: 1rem;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: #e6a11a;
+}
+
+.btn-primary:hover {
+    background-color: #c97b00;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: white;
+    border: solid 1px #e6a11a;
+    box-shadow: #e6a21ac2;
+}
+
+.btn-secondary:hover {
+    background-color: #f2f2f2;
+    text-decoration: none;
+}
+
+.home-text i {
+    margin: 10px;
+}
+
+#home h1  {
+    font-size: 3rem;
+    margin: 0;
+}
+
+#home h2 {
+    margin-bottom: 0;
+}
+
+#home .title,
+#home .highlight {
+    color: #c97b00;
+}
+
+.home-logo {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 10;
+}
+
+.main-logo {
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    z-index: 10;
+}
+
+.background-img {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+.background-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.background-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(to right, #f2f2f2 0%, transparent 30%),
+        linear-gradient(to top, #f2f2f2 0%, transparent 20%),
+        linear-gradient(to bottom, #f2f2f2 0%, transparent 20%);
+}
+
+.info-card {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 2rem;
+    z-index: 10;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.432);
+}
+
+.info-card i {
+    font-size: 40px;
+    color: #e6a11a;
+}
+
+.services,
+.address,
+.contact-us {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+.info-text h6,
+.info-text p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.info-card > div:not(:last-child) {
+    border-right: 1px solid #ccc;
+    padding-right: 2rem;
+    margin-right: 2rem;
+}
+
+@media (min-width: 1401px) {
+
+}
+
+@media (max-width: 1400px) {
+    .background-img img{ 
+        width: 100%;
+        right: 0;
+    }
+
+    .background-img::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+    background:
+        linear-gradient(to right, #f2f2f2 0%, transparent 30%),
+        linear-gradient(to top, #f2f2f2 0%, transparent 20%),
+        linear-gradient(to bottom, #f2f2f2 0%, transparent 20%);
+    }
+}
+
+@media (max-width: 1200px) {
+    .home-logo {
+        display: none;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .home-text {
+        order: 1;
+        position: static;
+        text-align: center;
+    }
+
+    .background-img {
+        order: 2;
+        position: static;
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    .home-text {
+        order: 1;
+        position: static;
+        text-align: center;
+    }
+
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .info-card h6,
+    .info-card p {
+        font-size: 1.5rem;
+    }
+    
+    .info-card > div:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-text {
+        order: 1;
+        position: static;
+        text-align: center;
+    }
+
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .info-card h6,
+    .info-card p {
+        font-size: 1.5rem;
+    }
+    
+    .info-card > div:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-text {
+        order: 1;
+        position: static;
+        text-align: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 15px;
+    }
+
+    .background-img img {
+        height: auto;
+        width: 100%;
+    }
+
+    .background-img::after {
+        background: 
+        linear-gradient(to right, #f2f2f2 0%, transparent 15%),
+        linear-gradient(to top, #f2f2f2 0%, transparent 10%),
+        linear-gradient(to bottom, #f2f2f2 0%, transparent 10%);
+    }
+
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .info-card h6,
+    .info-card p {
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .info-card > div:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+
+    }
+
+    .services,
+    .address,
+    .contact-us {
+        gap: 1rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .home-text {
+        position: static;
+        order: 1;
+        text-align: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.7rem;
+    }
+
+    .background-img {
+        position: relative;
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .background-img img  {
+        width: 100%;
+        height: auto;
+    }
+
+    .background-img::after {
+        background: 
+        linear-gradient(to right, #f2f2f2 0%, transparent 15%),
+        linear-gradient(to top, #f2f2f2 0%, transparent 10%),
+        linear-gradient(to bottom, #f2f2f2 0%, transparent 10%);
+    }
+
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .info-card h6,
+    .info-card p {
+        padding: 0;
+        font-size: .8rem;
+    }
+
+    .info-card > div:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .services,
+    .address,
+    .contact-us {
+        gap: 1rem;
+    }
+}
