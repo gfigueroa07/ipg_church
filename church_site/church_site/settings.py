@@ -28,20 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = os.getenv("DEBUG", "False") == "True"
 
-if not DEBUG:
-    STATICFILES_STORAGE = (
-        "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    )
-    
-ALLOWED_HOSTS = [
-    "https://ipgchurch.up.railway.app/",
-    "your-domain.com",
-    "www.your-domain.com",
-    "127.0.0.1",
-    "localhost",
-]
+DEBUG = True
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -155,7 +145,7 @@ STATICFILES_DIRS = [
     BASE_DIR /  "static",
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
