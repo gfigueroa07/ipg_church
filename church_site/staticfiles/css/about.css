@@ -212,7 +212,7 @@
     transform: translate(-50%, -50%);
 }
 
-.line {
+.abt-line {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -222,7 +222,7 @@
     transform: translateX(-50%);
 }
 
-.last .line {
+.last .abt-line {
     display: none;
 }
 
@@ -251,15 +251,6 @@
     display: block;
     border-radius: 10px;
 }
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 1401px) {
 

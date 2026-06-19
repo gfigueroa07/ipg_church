@@ -212,7 +212,7 @@
     transform: translate(-50%, -50%);
 }
 
-.line {
+.abt-line {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -222,7 +222,7 @@
     transform: translateX(-50%);
 }
 
-.last .line {
+.last .abt-line {
     display: none;
 }
 
@@ -231,7 +231,7 @@
     display: grid;
     grid-template-columns: 1fr 1.2fr 1fr;
     gap: 2rem;
-    padding: 20px 5%;
+    padding-inline: 20px 5%;
     background-color: #f2f2f2;
     align-items: center;
 }
@@ -243,7 +243,7 @@
 }
 
 .pastors-img {
-    transform: translateY(20px);
+    transform: translateY(0);
 }
 
 .pastors-img img {
@@ -252,14 +252,23 @@
     border-radius: 10px;
 }
 
+.pastors-msg {
+    margin-left: 100px;
+}
 
+.pastors-msg i {
+    color: #e6a11a;
+    font-size: 3rem;
+}
 
+.pastors-text {
+    font-family: cursive;
+    color: #e6a11a;
+}
 
-
-
-
-
-
+.text-author {
+    color: #011d35;
+}
 
 @media (min-width: 1401px) {
 
@@ -270,6 +279,10 @@
 }
 
 @media (max-width: 1200px) {
+    .about-container {
+        gap: .8rem;
+    }
+
     .about-wrapper {
         display: flex;
         flex-direction: column;
@@ -287,6 +300,35 @@
     .about-main {
         margin-right: 0;
         font-size: 1rem;
+    }
+
+    .about-pastors {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 1rem;
+        padding-inline: 10px 5%;
+        background-color: #f2f2f2;
+        align-items: center;
+    }
+
+    .pastors-info {
+        font-size: .8rem;
+        margin-right: 50px;
+    }
+
+    .pastors-img img {
+        bottom: 0;
+        border-radius: 10px;
+    }
+
+    .pastors-msg {
+        font-size: .8rem;
+        margin-left: 50px;
+    }
+
+    .pastors-msg i {
+        color: #e6a11a;
+        font-size: 2rem;
     }
 
 }
@@ -323,6 +365,7 @@
 }
 
 @media (max-width: 768px) {
+
     .about-card {
         display: flex;
         flex-direction: column;
@@ -341,6 +384,7 @@
 
     .about-main {
         font-size: 1rem;
+        text-align: center;
     }
 
     .about-tags i {
@@ -353,8 +397,31 @@
     }
 
     .history-title,
-    .gold-text {
+    .gold-text,
+    .abt-title {
         text-align: center;
+    }
+
+    .about-pastors {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pastors-img {
+        text-align: center;
+    }
+
+    .pastors-img img  {
+        display: inline-block;
+        width: 80%;
+        height: auto;
+    }
+
+    .pastors-info,
+    .pastors-msg {
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -362,6 +429,17 @@
     .about-body,
     .about-main {
         font-size: .8rem;
+    }
+
+    .about-pastors {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .pastors-img {
+        height: 80%;
     }
 }
 

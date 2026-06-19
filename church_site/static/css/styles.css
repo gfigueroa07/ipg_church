@@ -206,8 +206,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: nowrap;
-    padding: 2rem;
-    gap: 2rem;
+    padding-bottom: 0;
     width: 100%;
 }
 
@@ -266,7 +265,8 @@ footer .line {
     width: 90%;
     color: #ffffff;
     font-size: 0.9rem;
-    margin: 1.5rem 0;
+    margin: 0;
+    padding: 1rem 0;
     position: relative;
 }
 

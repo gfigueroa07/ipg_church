@@ -28,9 +28,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
+DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = True
+ALLOWED_HOSTS = [
+    ".up.railway.app",
+    "your-domain.com",
+    "www.your-domain.com",
+    "127.0.0.1:8000",
+]
 
 # Application definition
 
