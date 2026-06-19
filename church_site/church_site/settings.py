@@ -29,12 +29,18 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
-# DEBUG = True
+
+if not DEBUG:
+    STATICFILES_STORAGE = (
+        "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    )
+    
 ALLOWED_HOSTS = [
-    ".up.railway.app",
+    "https://ipgchurch.up.railway.app/",
     "your-domain.com",
     "www.your-domain.com",
-    "127.0.0.1:8000",
+    "127.0.0.1",
+    "localhost",
 ]
 
 # Application definition
@@ -149,7 +155,7 @@ STATICFILES_DIRS = [
     BASE_DIR /  "static",
 ]
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
