@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.core.mail import send_mail
-from core.models import ContactMessage
+from core.models import ContactMessage, GalleryImage
 from church_site.forms import ContactForm
 from django.contrib import messages
 
@@ -11,6 +11,16 @@ from django.contrib import messages
 
 def home(request):
     form = ContactForm(request.POST or None)
+    featured = GalleryImage.objects.filter(
+        is_featured=True
+    ).first()
+    gallery_items = GalleryImage.objects.exclude(
+        is_featured=True
+    )[:6]
+    context = {
+        'featured': featured,
+        'gallery_items': gallery_items
+    }
     if request.method == "POST":
         if form.is_valid():
             contact = form.save()
@@ -33,6 +43,8 @@ def home(request):
             )
     return render(request, 'core/home.html', {
         'form': form,
+        'featured': featured,
+        'gallery_items': gallery_items
     })
 
 def about(request):

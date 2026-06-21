@@ -127,54 +127,19 @@
                 </a>
             </div>
             <div class='gallery-featured'>
-                    <img
-                    class="test"
-                    src="{% static 'images/about_img.jpeg' %}"
-                    alt="PRAISE">
+                {% if featured %}
+                    <img src='{{ featured.image.url }}'>
+                {% endif %}
             </div>
         </div>
         <div class='gallery-grid'>
-            <div class='gallery-item'>
-                <img
-                class="test1"
-                src="{% static 'images/about_img.jpeg' %}"
-                alt="PRAISE">
-            </div>
-
-            <div class='gallery-item'>
-                <img
-                class="test2"
-                src="{% static 'images/about_img.jpeg' %}"
-                alt="PRAISE">
-            </div>
-
-           <div class='gallery-item'>
-                <img
-                class="test3"
-                src="{% static 'images/about_img.jpeg' %}"
-                alt="PRAISE">
-            </div>
-
-            <div class='gallery-item'>
-                <img
-                class="test4"
-                src="{% static 'images/about_img.jpeg' %}"
-                alt="PRAISE">
-            </div>
-
-            <div class='gallery-item'>
-                <img
-                class="test5"
-                src="{% static 'images/about_img.jpeg' %}"
-                alt="PRAISE">
-            </div>
-
-            <div class='gallery-item'>
-                <img
-                class="test6"
-                src="{% static 'images/about_img.jpeg' %}"
-                alt="PRAISE">
-            </div>
+            {% for image in gallery_items %}
+                <div class='gallery-item'>
+                    <img 
+                    src='{{ image.image.url }}'
+                    alt='{{ image.title }}'>
+                </div>
+            {% endfor %}
         </div>
     </section>
     <section id="contact">

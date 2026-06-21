@@ -18,3 +18,35 @@ class ContactMessage(models.Model):
     
     def __str__(self):
         return self.full_name
+    
+class GalleryImage(models.Model):
+    title = models.CharField(
+        max_length=100,
+        blank=True
+    )
+    image = models.ImageField(
+        upload_to='gallery/'
+    )
+    is_featured = models.BooleanField(
+        default=False
+    )
+    display_order = models.PositiveIntegerField(
+        default=0
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+    class Meta:
+        ordering = ['display_order']
+        
+    def save(self, *args, **kwargs):
+        if self.is_featured:
+            GalleryImage.objects.filter(
+                is_featured=True
+            ).update(
+                is_featured=False
+            )
+        super().save(*args, **kwargs)
+        
+    def __str__(self):
+        return self.title or f"Image {self.pk}"
