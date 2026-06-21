@@ -595,11 +595,6 @@ footer .line::after {
         gap: 0.5rem;
     }
 
-    footer h3,
-    footer a,
-    footer p {
-        font-size: 1.2rem;
-    }
 
     .ftr-left {
     background: #111111;
@@ -669,12 +664,6 @@ footer .line::after {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-    }
-
-    footer h3,
-    footer p,
-    footer a {
-        font-size: 0.8rem;
     }
 
     .ftr-left {

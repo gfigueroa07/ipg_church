@@ -379,17 +379,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: .8rem;
+        font-size: 1rem;
     }
 
     .about-main {
         font-size: 1rem;
         text-align: center;
-    }
-
-    .about-tags i {
-        width: 60px;
-        height: 50px;
     }
 
     .tag-item {
@@ -422,14 +417,11 @@
     .pastors-msg {
         padding: 0;
         margin: 0;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .about-body,
-    .about-main {
-        font-size: .8rem;
-    }
 
     .about-pastors {
         display: flex;
