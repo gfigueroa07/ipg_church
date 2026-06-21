@@ -371,19 +371,30 @@
         flex-direction: column;
     }
 
+    .about-card h6,
+    .about-card a {
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+    }
     .about-info {
         justify-content: center;
+        font-size: 25px;
     }
 
     .about-body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 1rem;
+        font-size: 25px;
+    }
+
+    .about-content p {
+        font-size: 25px;
     }
 
     .about-main {
-        font-size: 1rem;
+        font-size: 25px;
         text-align: center;
     }
 
@@ -417,7 +428,7 @@
     .pastors-msg {
         padding: 0;
         margin: 0;
-        font-size: 1rem;
+        font-size: 25px;
     }
 }
 
