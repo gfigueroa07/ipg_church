@@ -23,7 +23,9 @@
 
 .gallery-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
     gap: 3rem;
     padding: 60px;
@@ -136,11 +138,6 @@
 }
 
 @media (max-width: 992px) {
-    .gallery-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }

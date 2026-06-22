@@ -6,12 +6,22 @@
 {% block content %}
 <div class='sermon-container'>
     <div class='sermons-grid'>
-        <iframe 
-            src='{{ youtube_url }}'
-            title='{{ title }}'
-            loading='lazy'
-            allowfullscreen>
-        </iframe>
+        {% for sermon in sermons %}
+            <div class="sermon">
+                <h3>{{ sermon.title }}</h3>
+
+               <iframe
+                    width="560"
+                    height="315"
+                    src="{{ sermon.embed_url }}"
+                    title="{{ sermon.title }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
