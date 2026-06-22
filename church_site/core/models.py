@@ -19,7 +19,27 @@ class ContactMessage(models.Model):
     def __str__(self):
         return self.full_name
     
+class GalleryAlbum(models.Model):
+    title = models.CharField(
+        max_length=100
+    )
+    display_order = models.PositiveBigIntegerField(
+        default=0
+    ) 
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+    def __str__(self):
+        return self.title
+    
 class GalleryImage(models.Model):
+    album = models.ForeignKey(
+        GalleryAlbum,
+        on_delete=models.CASCADE,
+        related_name='images',
+        null=False,
+        blank=False,
+    )
     title = models.CharField(
         max_length=100,
         blank=True

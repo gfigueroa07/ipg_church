@@ -19,10 +19,20 @@
             <p>Moments that celebrate faith,<br>
                 worship, and community.
             </p>
+        </div>
     </div>
-    <div class='gallery-item'>
-    
-
-    </div>
+    {% for album in albums %}
+        <h2>{{ album.title }}</h2>
+        <div class='gallery-grid'>
+            {% for image in album.images.all %}
+                <div class='gallery-item'>
+                    <img
+                    src='{{ image.image.url }}'
+                    alt='{{ image.title }}'
+                    >
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

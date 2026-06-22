@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.core.mail import send_mail
-from core.models import ContactMessage, GalleryImage
+from core.models import ContactMessage, GalleryImage, GalleryAlbum
 from church_site.forms import ContactForm
 from django.contrib import messages
 
@@ -63,4 +63,9 @@ def sermons(request):
     return HttpResponse('sermons coming soon...')
 
 def gallery(request):
-    return render(request, 'core/gallery.html')
+    albums = GalleryAlbum.objects.prefetch_related(
+        'images'
+    ).order_by('display_order')
+    return render(request, 'core/gallery.html', {
+        'albums': albums
+    })
