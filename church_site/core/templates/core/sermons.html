@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'css/sermons.css' %}">
+{% endblock %}
+{% block content %}
+<div class='sermon-container'>
+    <div class='sermons-grid'>
+        <iframe 
+            src='{{ youtube_url }}'
+            title='{{ title }}'
+            loading='lazy'
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+{% endblock %}

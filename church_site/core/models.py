@@ -70,3 +70,18 @@ class GalleryImage(models.Model):
         
     def __str__(self):
         return self.title or f"Image {self.pk}"
+    
+class Sermon(models.Model):
+    title = models.CharField(
+        max_length=200
+    )
+    youtube_url = models.URLField()
+    sermon_date = models.DateField()
+    thumbnail = models.ImageField(
+        upload_to='sermons/',
+        blank=True,
+        null=True
+    )
+    
+    def __str__(self):
+        return self.title

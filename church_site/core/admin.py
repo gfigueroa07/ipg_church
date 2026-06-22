@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ContactMessage, GalleryImage, GalleryAlbum
+from .models import ContactMessage, GalleryImage, GalleryAlbum, Sermon
 # Register your models here.
 
 admin.site.register(ContactMessage)
@@ -19,4 +19,12 @@ class GalleryAlbumAdmin(admin.ModelAdmin):
         'title',
         'display_order',
         'created_at',
+    )
+    
+@admin.register(Sermon)
+class SermonAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'youtube_url',
+        'sermon_date',
     )
