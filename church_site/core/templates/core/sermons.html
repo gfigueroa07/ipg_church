@@ -10,8 +10,6 @@
             <div class="sermon">
                 <h3>{{ sermon.title }}</h3>
                <iframe
-                    width="560"
-                    height="315"
                     src="{{ sermon.embed_url }}"
                     title="{{ sermon.title }}"
                     frameborder="0"
@@ -22,5 +20,8 @@
             </div>
         {% endfor %}
     </div>
+    <a class='view-more-btn' href="https://www.youtube.com/@ipgchurch">
+        View More
+    </a>
 </div>
 {% endblock %}
