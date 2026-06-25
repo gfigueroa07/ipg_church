@@ -1,0 +1,111 @@
+{% extends 'core/base.html'  %}
+{% load static %}
+
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'css/ministries.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class='ministry-container'>
+    <div class='ministry-header'>
+        <div class='ministry-bckgnd-img'>
+            <img class='ministry-img'
+            src="{% static 'images/ministry.PNG' %}"
+            alt='ministry'>
+        </div>
+        <div class='ministry-text'>
+            <h1>Ministries</h1>
+            <p>Growing together through worship, fellowship, and service.</p>
+        </div>
+    </div>
+    
+    <div class='ministry-grid'>
+        <div class='ministry-card'>
+            <img
+                src="{% static 'images/kids_ministry.PNG' %}"
+                alt='kids_ministry'>
+            <div class='ministry-info'>
+                <i class="fa-solid fa-children"></i>
+                <h1 class='ministry-title'>
+                    Kids Ministry
+                </h1>
+                <p>
+                    A safe and welcoming environment
+                    where children can learn about
+                    God's love through age-appropriate lessons,
+                    activities, and fellowship.
+                </p>
+                <i class="fa-regular fa-calendar"></i>
+
+            </div>
+
+        </div>
+        <div class='ministry-card'>
+            <img
+                src="{% static 'images/women_ministry.PNG' %}"
+                alt='women_ministry'>
+            <div class='ministry-info'>
+                <i class="fa-solid fa-person-dress"></i>
+                <h1 class='ministry-title'>
+                    Women's Ministry
+                </h1>
+                <p>
+                    Encouraging women to grow in
+                    where children can learn about
+                    faith, build meaningful relationships,
+                    God's love through age-appropriate
+                    and support one another through
+                    lessons, activities, and fellowship.
+                    prayer, Bible study, and fellowship.
+                </p>
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+        </div>
+        <div class='ministry-card'>
+            <img
+            src="{% static 'images/men_ministry.PNG' %}"
+            alt='men_ministry'>
+            <div class='ministry-info'>
+                <i class="fa-solid fa-person"></i>
+                <h1 class='ministry-title'>
+                    Men's Ministry
+                </h1>
+                <p>
+                    Helping men develop strong faith,
+                    Leading the congregation in
+                    leadership, and brotherhood
+                    worship through music, praise,
+                    through discipleship, service,
+                    and a heart devoted to
+                    and community.
+                </p>
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+        </div>
+        <div class='ministry-card'>
+            <img 
+            src="{% static 'images/worship_ministry.PNG' %}"
+            alt='worship_ministry'>
+            <div class='ministry-info'>
+                <i class="fa-solid fa-music"></i>
+                <h1 class='ministry-title'>
+                    Worship Ministry
+                </h1>
+                <p>
+                    Leading the congregation in
+                    leadership, and brotherhood
+                    worship through music, praise,
+                    through discipleship, service,
+                    and a heart devoted to
+                    and community.
+                    glorifying God.
+                </p>
+                <div class='card-ftr'>
+                    <i class="fa-regular fa-calendar"></i>
+                    <p>Sundays at 3:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

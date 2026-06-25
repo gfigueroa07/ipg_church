@@ -1,0 +1,143 @@
+.ministry-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    gap: 1rem; 
+    background: #FAF8F4;
+}
+
+.ministry-header {
+    position: relative;
+}
+
+.ministry-bckgnd-img img {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+.ministry-text {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.ministry-card {
+    display: flex;
+    align-items: stretch;
+    background: white;
+    border: 1px solid #e6a11a;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ministry-card img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.ministry-info {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ministry-card i,
+.ministry-card h1 {
+    color: #e6a11a;
+}
+
+.ministry-card .fa-solid {
+    font-size: 2rem;
+}
+
+.ministry-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+.ministry-title:after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 10%;
+    height: 3px;
+    background: #e6a11a;
+    border-radius: 2px;
+}
+
+.card-ftr {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+@media (min-width: 1401px) {
+
+}
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+    .ministry-grid {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+    .ministry-card img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ministry-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ministry-card img {
+        width: 100%;
+    }
+
+    .ministry-info {
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+}

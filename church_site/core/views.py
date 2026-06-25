@@ -51,13 +51,7 @@ def about(request):
     return render(request, 'core/about.html')
 
 def ministries(request):
-    return HttpResponse('ministries coming soon...')
-
-def donate(request):
-    return HttpResponse('donate coming soon...')
-
-def request_prayer(request):
-    return HttpResponse('prayer request coming soon...')
+    return render(request, 'core/ministries.html')
 
 def sermons(request):
     sermons = Sermon.objects.order_by(
