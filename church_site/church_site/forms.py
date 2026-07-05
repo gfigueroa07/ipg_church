@@ -17,5 +17,11 @@ class ContactForm(forms.ModelForm):
             'phone_number': 'PHONE NUMBER',
             'message': 'MESSAGE'
         }
+
+class MultipleFileInput(forms.ClearableFileInput):
+    allow_multiple_selected = True
     
-    
+class GalleryUploadForm(forms.Form):
+    images = forms.FileField(
+        widget=MultipleFileInput()
+    )

@@ -33,6 +33,11 @@
                 </div>
             {% endfor %}
         </div>
+        {% if user.is_authenticated %}
+            <a class='upload-btn' href="{% url 'upload_gallery_images' album.id %}">
+                Upload Images
+            </a>
+        {% endif %}
     {% endfor %}
 </div>
 {% endblock %}

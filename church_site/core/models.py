@@ -66,8 +66,9 @@ class GalleryImage(models.Model):
     def save(self, *args, **kwargs):
         if self.is_featured:
             GalleryImage.objects.filter(
+                album=self.album,
                 is_featured=True
-            ).update(
+            ).exclude(pk=self.pk).update(
                 is_featured=False
             )
         super().save(*args, **kwargs)

@@ -26,7 +26,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('ministries/', views.ministries, name='ministries'),
     path('gallery/', views.gallery, name='gallery'),
-    path('sermons/', views.sermons, name='sermons'),   
+    path('sermons/', views.sermons, name='sermons'),
+    path('gallery/<int:album_id>/upload/', views.upload_gallery_images, name='upload_gallery_images'),   
 ]
 
 if settings.DEBUG:

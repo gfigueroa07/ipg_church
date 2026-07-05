@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.core.mail import send_mail
-from core.models import ContactMessage, GalleryImage, GalleryAlbum, Sermon
-from church_site.forms import ContactForm
+from .models import ContactMessage, GalleryImage, GalleryAlbum, Sermon
+from church_site.forms import ContactForm, GalleryUploadForm
 from django.contrib import messages
 
 
@@ -69,3 +69,35 @@ def gallery(request):
     return render(request, 'core/gallery.html', {
         'albums': albums
     })
+    
+def upload_gallery_images(request, album_id):
+    album = get_object_or_404(
+        GalleryAlbum,
+        pk=album_id
+    )
+
+    if request.method == "POST":
+        form = GalleryUploadForm(request.POST, request.FILES)
+
+        if form.is_valid():
+
+            for image in request.FILES.getlist("images"):
+
+                GalleryImage.objects.create(
+                    album=album,
+                    image=image,
+                )
+
+            return redirect("gallery")
+
+    else:
+        form = GalleryUploadForm()
+
+    return render(
+        request,
+        "core/upload_gallery_images.html",
+        {
+            "album": album,
+            "form": form,
+        },
+    )
