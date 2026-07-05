@@ -22,16 +22,13 @@
         </div>
     </div>
     {% for album in albums %}
-        <h2>{{ album.title }}</h2>
-        <div class='gallery-grid'>
-            {% for image in album.images.all %}
-                <div class='gallery-item'>
-                    <img
-                    src='{{ image.image.url }}'
-                    alt='{{ image.title }}'
-                    >
-                </div>
-            {% endfor %}
+        <div class="album-card">
+            <h2>{{ album.title }}</h2>
+            <img src="{{ album.cover_image.url }}">           
+            <p>{{ album.images.count }} Photos</p>
+            <a href="{% url 'album_detail' album.id %}">
+                View Album →
+            </a>
         </div>
         {% if user.is_authenticated %}
             <a class='upload-btn' href="{% url 'upload_gallery_images' album.id %}">

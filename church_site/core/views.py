@@ -101,3 +101,17 @@ def upload_gallery_images(request, album_id):
             "form": form,
         },
     )
+    
+def album_detail(request, album_id):
+    album = get_object_or_404(
+        GalleryAlbum,
+        pk=album_id
+    )
+
+    return render(
+        request,
+        "core/album_detail.html",
+        {
+            "album": album,
+        },
+    )

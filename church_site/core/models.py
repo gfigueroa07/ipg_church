@@ -27,6 +27,11 @@ class GalleryAlbum(models.Model):
     title = models.CharField(
         max_length=100
     )
+    cover_image = models.ImageField(
+        upload_to='gallery/covers/',
+        blank=True,
+        null=True
+    )
     display_order = models.PositiveBigIntegerField(
         default=0
     ) 

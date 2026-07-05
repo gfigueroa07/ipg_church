@@ -1,0 +1,13 @@
+<h1>{{ album.title }}</h1>
+
+<div class="gallery-grid">
+
+    {% for image in album.images.all %}
+
+        <img
+            src="{{ image.image.url }}"
+            alt="{{ image.title }}"
+        >
+    {% endfor %}
+
+</div>
